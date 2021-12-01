@@ -1,0 +1,39 @@
+﻿.nopadding {
+    padding: 0;
+    margin: 15px;
+}
+
+.k-grid tr:hover {
+    background: #f1f1f1;
+}
+
+.k-grid tr.k-alt:hover {
+    background: #f1f1f1;
+}
+
+.k-grid-filter.k-state-active {
+    background-color: #7DD8AA;
+}
+
+/* needed for check boxes */
+.k-checkbox:checked {
+    background-color: #007bff !important;
+}
+
+/* keep grid update and cancel buttons uniform */
+.k-grid-update, .k-grid-cancel {
+    width: 83px;
+}
+
+/* styling for spinner */
+.k-loading-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+/* styling for spinner */
+.k-loading-color {
+    background-color: #6c757d !important;
+    opacity: .25;
+}

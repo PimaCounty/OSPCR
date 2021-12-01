@@ -1,0 +1,44 @@
+[
+  {
+    "outputFileName": "wwwroot/Content/templateCss.min.css",
+    "inputFiles": [
+      "wwwroot/Content/bootstrap.css", // Place the Bootstrap stylesheet before the Kendo UI stylesheet, so that same-specificity Kendo UI selectors can take precedence.
+      "wwwroot/Content/kendo.bootstrap-v4.css", // Added per https://docs.telerik.com/aspnet-core/getting-started/first-steps
+      "wwwroot/Content/kendo.silver.min.css",
+      "wwwroot/Content/Site.css",
+      "wwwroot/Content/css/PCBrandingStandards.css",
+      "wwwroot/Content/css/glyphicons.css",
+      "wwwroot/Content/css/PCDevBanner.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/kendoJS.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/jquery-3.1.1.js",
+      "wwwroot/Scripts/bootstrap.min.js",
+      "wwwroot/Scripts/kendo.all.min.js", // Added new JS file per https://docs.telerik.com/aspnet-core/getting-started/first-steps
+      "wwwroot/Scripts/jszip.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/brandingJS.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/UI/Site.js",
+      "wwwroot/Scripts/UI/Resource.js",
+      "wwwroot/Scripts/GoogleAnalytics.js",
+      "wwwroot/Scripts/PCBrandingStandards.js",
+      "wwwroot/Scripts/PCDevBanner.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/UI/UserAdmin.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/UI/UserAdmin.js"
+    ]
+  }
+]

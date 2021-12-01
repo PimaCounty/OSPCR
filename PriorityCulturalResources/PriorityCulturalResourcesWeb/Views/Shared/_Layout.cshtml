@@ -1,0 +1,145 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    var userId = User.Identity.Name.Split('\\')[1];
+    var user = await userManager.FindByNameAsync(userId);
+
+    // Default to read only view.
+    var isUserAdmin = false;
+    var isUserReadWrite = false;
+    var isUserReadOnly = true;
+
+    if (user != null)
+    {
+        isUserAdmin = await userManager.IsInRoleAsync(user, "Admin") ? true : false;
+        isUserReadWrite = await userManager.IsInRoleAsync(user, "Write") ? true : false;
+        isUserReadOnly = await userManager.IsInRoleAsync(user, "Read") ? true : false;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="icon" href="~/Content/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="~/Content/templateCss.min.css" />
+</head>
+<body>
+    <script src="~/Scripts/kendoJS.min.js" asp-append-version="true"></script>
+    <script src="~/Scripts/brandingJS.min.js" asp-append-version="true"></script>
+    <script>
+    var isUserAdmin = "@isUserAdmin";
+    var isUserReadWrite = "@isUserReadWrite";
+    var isUserReadOnly = "@isUserReadOnly";
+    var userName = "@userId";
+    </script>
+
+    <!--Environment  Identifier-->
+    <div id="environmentDescriptorWrapper" class="whatenv hidebanner">
+        <span id="environmentDescriptor"></span>
+    </div>
+    <div id="allcontent">
+        <!--Header and Navigation-->
+        <nav class="navbar navbar-dark navbar-expand-md px-0 py-0">
+            <div class="container-fluid">
+                <a class="navbar-brand d-none d-sm-block" href="http://webcms.pima.gov">
+                    <img id="navbarlogomain" src="~/Content/images/pc-weblogo-drk-pima-county.png" class="img-responsive center-block" alt="Pima County">
+                </a>
+                <a class="navbar-brand d-block d-sm-none" href="http://webcms.pima.gov">
+                    <img id="navbarlogomobile" src="~/Content/images/pc-weblogo-drk-pima-county.png" class="img-responsive center-block" alt="Pima County">
+                </a>
+                <ul id="mobilecontact" class="nav navbar-nav ml-auto d-block d-md-none">
+                    <li class="float-right">
+                        <a href="#" class="contact-icon"><span class="glyphicons glyphicons-earphone"></span></a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler my-2 mr-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarSupportedContent" class="navbar navbar-collapse collapse py-0">
+                    <ul class="nav navbar-nav mr-auto">
+                        @if (user != null)
+                        {
+                            <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link navbar-item-padding">Home</a></li>
+                        }
+                        @if (user != null && isUserAdmin)
+                        {
+                            <li class="nav-item"><a asp-controller="Security" asp-action="ManageUserRoles" class="nav-link navbar-item-padding">User Administration</a></li>
+                        }
+                        <li class="nav-item dropdown">
+                            <a id="dropdownLink" href="#" data-toggle="dropdown" class="nav-link navbar-item-padding dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dropdown Link<span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-background-color">
+                                <li class="dropdown-item px-0"><a id="secondLink" href="#" class="nav-link navbar-item-padding">Second Link</a></li>
+                                <li class="dropdown-item px-0"><a id="thirdLink" href="#" class="nav-link navbar-item-padding">Third Link</a></li>
+                                <li class="dropdown-item px-0"><a id="fourthLink" href="#" class="nav-link navbar-item-padding">Fourth Link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <ul id="mobilecontact" class="nav navbar-nav ml-auto d-none d-md-block">
+                    <li class="float-right">
+                        <a href="#" class="contact-icon"><span class="glyphicons glyphicons-earphone"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Contact Information-->
+        <div id="contactinfo">
+            <a href="#">Address (with map link)</a><br />
+            Email <a href="#">(with link)</a><br />
+            Phone: <a href="tel:+1-520-555-1234">(520) 555-1234</a>
+        </div>
+
+        <!--Side Nav-->
+        <nav class="col-sm-2 bs-docs-sidebar">
+            <ul id="sidebar" class="nav flex-column fixed">
+                <li>
+                    <a href="#GroupA">Group A</a>
+                    <ul class="nav nav-item">
+                        <li><a href="#GroupASub1">Sub-Group 1</a></li>
+                        <li><a href="#GroupASub2">Sub-Group 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#GroupB">Group B</a>
+                    <ul class="nav nav-item">
+                        <li><a href="#technology">Technology Used</a></li>
+                        <li><a href="#usage">Using the Template</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#GroupC">Group C</a>
+                    <ul class="nav nav-item">
+                        <li><a href="#GroupCSub1">Sub-Group 1</a></li>
+                        <li><a href="#GroupCSub2">Sub-Group 2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--End SideNav-->
+
+        <div class="container">
+            <!--Application Name-->
+            <div class="h1 py-3">Pima County Template</div>
+            <!--Main Content-->
+            <div id="maincontent">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer" role="contentinfo">
+        <div class="container text-center">
+            <br />
+            Copyright © @DateTime.Now.Year, Pima County Arizona, all rights reserved
+        </div>
+    </footer>
+    <!--End Footer-->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

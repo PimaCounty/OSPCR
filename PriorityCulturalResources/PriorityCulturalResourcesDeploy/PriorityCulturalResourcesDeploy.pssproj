@@ -1,0 +1,51 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6CAFC0C6-A428-4d30-A9F9-700E829FEA51</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyApplication</RootNamespace>
+    <AssemblyName>MyApplication</AssemblyName>
+    <Name>PriorityCulturalResourcesDeploy</Name>
+    <ProjectHome />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="dev_utils\" />
+    <Folder Include="Local\" />
+    <Folder Include="Remote\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dev_utils\10_Encrypt_Sensitive_Strings.ps1" />
+    <Compile Include="dev_utils\InstantiateTemplate.ps1" />
+    <Compile Include="Local\30_GenerateConnectionStringsFile.ps1" />
+    <Compile Include="Local\40_GenerateGoogleAnalyticsFile.ps1" />
+    <Compile Include="Remote\03_SetupServerRoles.ps1" />
+    <Compile Include="Remote\05_CreateHostWebsiteIfNotExist.ps1" />
+    <Compile Include="Remote\10_PreDeploy_Clean.ps1" />
+    <Compile Include="Remote\20_PreDeploy_Setup.ps1" />
+    <Compile Include="Remote\30_PostDeploy_Configure - Non-web.ps1" />
+    <Compile Include="Remote\30_PostDeploy_Configure.ps1" />
+    <Compile Include="Remote\35_PostDeploy_AppPermissions.ps1" />
+    <Compile Include="Remote\40_Setup_ScheduledTasks.ps1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="Build" />
+  <Import Project="$(MSBuildExtensionsPath)\PowerShell Tools for Visual Studio\PowerShellTools.targets" Condition="Exists('$(MSBuildExtensionsPath)\PowerShell Tools for Visual Studio\PowerShellTools.targets')" />
+</Project>

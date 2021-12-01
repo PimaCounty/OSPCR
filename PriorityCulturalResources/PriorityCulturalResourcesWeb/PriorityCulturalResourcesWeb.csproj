@@ -1,0 +1,137 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+	  <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\bootstrap.css" />
+    <None Include="wwwroot\Content\bootstrap.css.map" />
+    <None Include="wwwroot\Content\bootstrap.min.css" />
+    <None Include="wwwroot\Content\bootstrap.min.css.map" />
+    <None Include="wwwroot\Content\css\glyphicons.css" />
+    <None Include="wwwroot\Content\css\PCBrandingStandards.css" />
+    <None Include="wwwroot\Content\css\PCDevBanner.css" />
+    <None Include="wwwroot\Content\favicon.ico" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSans.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\DejaVuSerif.ttf" />
+    <None Include="wwwroot\Content\fonts\DejaVu\LICENSE.txt" />
+    <None Include="wwwroot\Content\fonts\glyphs\KendoUIGlyphs.eot" />
+    <None Include="wwwroot\Content\fonts\glyphs\KendoUIGlyphs.svg" />
+    <None Include="wwwroot\Content\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <None Include="wwwroot\Content\fonts\glyphs\KendoUIGlyphs.woff" />
+    <None Include="wwwroot\Content\fonts\glyphs\WebComponentsIcons.eot" />
+    <None Include="wwwroot\Content\fonts\glyphs\WebComponentsIcons.svg" />
+    <None Include="wwwroot\Content\fonts\glyphs\WebComponentsIcons.ttf" />
+    <None Include="wwwroot\Content\fonts\glyphs\WebComponentsIcons.woff" />
+    <None Include="wwwroot\Content\images\back.png" />
+    <None Include="wwwroot\Content\images\kendoui.svg" />
+    <None Include="wwwroot\Content\images\kendoui.ttf" />
+    <None Include="wwwroot\Content\images\kendoui.woff" />
+    <None Include="wwwroot\Content\images\pc-weblogo-drk-pima-county.png" />
+    <None Include="wwwroot\Content\images\wp8_icons.png" />
+    <None Include="wwwroot\Content\images\wp8_inverseicons.png" />
+    <None Include="wwwroot\Content\kendo.common.min.css" />
+    <None Include="wwwroot\Content\kendo.common.min.css.map" />
+    <None Include="wwwroot\Content\kendo.silver.min.css" />
+    <None Include="wwwroot\Content\kendo.silver.min.css.map" />
+    <None Include="wwwroot\Content\Silver\editor.png" />
+    <None Include="wwwroot\Content\Silver\imagebrowser.png" />
+    <None Include="wwwroot\Content\Silver\indeterminate.gif" />
+    <None Include="wwwroot\Content\Silver\loading-image.gif" />
+    <None Include="wwwroot\Content\Silver\loading.gif" />
+    <None Include="wwwroot\Content\Silver\loading_2x.gif" />
+    <None Include="wwwroot\Content\Silver\markers.png" />
+    <None Include="wwwroot\Content\Silver\markers_2x.png" />
+    <None Include="wwwroot\Content\Silver\slider-h.gif" />
+    <None Include="wwwroot\Content\Silver\slider-v.gif" />
+    <None Include="wwwroot\Content\Silver\sprite.png" />
+    <None Include="wwwroot\Content\Silver\sprite_2x.png" />
+    <None Include="wwwroot\Content\Silver\sprite_kpi.png" />
+    <None Include="wwwroot\Content\Silver\sprite_kpi_2x.png" />
+    <None Include="wwwroot\Content\Site.css" />
+    <None Include="wwwroot\Content\templateCss.min.css" />
+    <None Include="wwwroot\Content\textures\brushed-metal.png" />
+    <None Include="wwwroot\Content\textures\dots1.png" />
+    <None Include="wwwroot\Content\textures\dots10.png" />
+    <None Include="wwwroot\Content\textures\dots11.png" />
+    <None Include="wwwroot\Content\textures\dots12.png" />
+    <None Include="wwwroot\Content\textures\dots13.png" />
+    <None Include="wwwroot\Content\textures\dots2.png" />
+    <None Include="wwwroot\Content\textures\dots3.png" />
+    <None Include="wwwroot\Content\textures\dots4.png" />
+    <None Include="wwwroot\Content\textures\dots5.png" />
+    <None Include="wwwroot\Content\textures\dots6.png" />
+    <None Include="wwwroot\Content\textures\dots7.png" />
+    <None Include="wwwroot\Content\textures\dots8.png" />
+    <None Include="wwwroot\Content\textures\dots9.png" />
+    <None Include="wwwroot\Content\textures\glass-lighter.png" />
+    <None Include="wwwroot\Content\textures\glass.png" />
+    <None Include="wwwroot\Content\textures\highlight.png" />
+    <None Include="wwwroot\Content\textures\hsv-gradient.png" />
+    <None Include="wwwroot\Content\textures\hue.png" />
+    <None Include="wwwroot\Content\textures\leather1.png" />
+    <None Include="wwwroot\Content\textures\leather2.png" />
+    <None Include="wwwroot\Content\textures\noise.png" />
+    <None Include="wwwroot\Content\textures\stripe1.png" />
+    <None Include="wwwroot\Content\textures\stripe2.png" />
+    <None Include="wwwroot\Content\textures\stripe3.png" />
+    <None Include="wwwroot\Content\textures\stripe4.png" />
+    <None Include="wwwroot\Content\textures\stripe5.png" />
+    <None Include="wwwroot\Content\textures\stripe6.png" />
+    <None Include="wwwroot\Content\textures\transparency.png" />
+    <None Include="wwwroot\Content\textures\transtexture.png" />
+    <None Include="wwwroot\Scripts\bootstrap.js" />
+    <None Include="wwwroot\Scripts\bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\GoogleAnalytics.js" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.intellisense.js" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.js" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.min.map" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.slim.js" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.slim.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.1.1.slim.min.map" />
+    <None Include="wwwroot\Scripts\jszip.min.js" />
+    <None Include="wwwroot\Scripts\kendo.all.min.js" />
+    <None Include="wwwroot\Scripts\kendo.all.min.js.map" />
+    <None Include="wwwroot\Scripts\PCBrandingStandards.js" />
+    <None Include="wwwroot\Scripts\PCDevBanner.js" />
+    <None Include="wwwroot\Scripts\UI\Default.js" />
+    <None Include="wwwroot\Scripts\UI\Site.js" />
+    <None Include="wwwroot\Scripts\UI\UserAdmin.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PriorityCulturalResourcesService\PriorityCulturalResourcesService.csproj" />
+  </ItemGroup>
+
+</Project>
